@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>filter</title>    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./libs/air-datepicker.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body class="body-filter">    
@@ -19,41 +23,169 @@
                 <div data-content="1" class="tabs__content tabs__content--active">
                     <div class="filter__container">
                         <div class="filter-item">
-                            <div class="filter-item__row">
-                                <svg class='filter-item__icon' width='20' height='19'><use href='./img/icons/icons.svg#map_book'></use></svg>
-                                <div class="filter-item__content">
+                            <div class="filter-item__row" data-filter-tab="1">
+                                <svg class='filter-item__icon' width='24' height='24'><use href='./img/icons/icons.svg#map_book'></use></svg>
+                                <div class="filter-item__content" >
                                     <div class="filter-item__name">Регион</div>
-                                    <div class="filter-item__field">Регион, город, место</div>
+                                    <input class="filter-item__field" placeholder="Регион, город, место" readonly/>                                   
                                 </div>
                             </div>
-                            <div class="filter-item__block-list">
-                                <label class="filter-item__search"><input type="text" class="filter-itme__search-field" placeholder="Поиск"></label> 
-                                <div class="filter-item__inner-list">
-                                    <div class="filter-item__list-name"></div>
-                                    <ul class="filter-item__list">
-                                        <li class="filter-item__item"></li>
-                                        <li class="filter-item__item"></li>
-                                        <li class="filter-item__item"></li>
-                                        <li class="filter-item__item"></li>
-                                        <li class="filter-item__item"></li>
-                                    </ul> 
+                            <div class="filter-item__list filter-list" data-filter-list="1">
+                                <div class="filter-list__inner">
+                                    <label class="filter-list__search"><input type="text" class="filter-itme__search-field" placeholder="Поиск"></label> 
+                                    <div class="filter-list__inner-list list-scrollbar ">
+                                        <div class="filter-list__row">
+                                            <div class="filter-list__name">Популярные направления</div>
+                                            <ul class="filter-list__items">
+                                                <li class="filter-list__item">Байкал</li>
+                                                <li class="filter-list__item">Архангельская область</li>
+                                                <li class="filter-list__item">Сочи</li>
+                                                <li class="filter-list__item">Камчатка</li>
+                                                <li class="filter-list__item">Антарктика</li>
+                                            </ul> 
+                                        </div>                                                            
+                                        <div class="filter-list__row">
+                                            <div class="filter-list__name">По алфавиту</div>
+                                            <ul class="filter-list__items">
+                                                <li class="filter-list__item">Адыгея</li>
+                                                <li class="filter-list__item">Амурская область</li>
+                                                <li class="filter-list__item">Арктика</li>
+                                                <li class="filter-list__item">Камчатка</li>
+                                                <li class="filter-list__item">Архангельская область</li>
+                                                <li class="filter-list__item">Антарктика</li>
+                                                <li class="filter-list__item">Алтай</li>
+                                                <li class="filter-list__item">Амурская область</li>
+                                                <li class="filter-list__item">Арктика</li>
+                                                <li class="filter-list__item">Камчатка</li>
+                                                <li class="filter-list__item">Архангельская область</li>
+                                                <li class="filter-list__item">Антарктика</li>
+                                            </ul> 
+                                        </div>                                      
+                                    </div>
                                 </div>
-                                
+                                <div class="filter-list__footer">
+                                    <div class="filter-list__item-choice filter-list__item-choice--icon">Архангельская область</div>
+                                    <div class="filter-list__item-choice filter-list__item-choice--icon">Камчатка</div>
+                                </div>
                             </div>
                         </div> 
+                        <div class="filter-item">
+                            <div class="filter-item__row" data-filter-tab="2">
+                                <svg class='filter-item__icon' width='20' height='27'><use href='./img/icons/icons.svg#traveler'></use></svg>
+                                <div class="filter-item__content" >
+                                    <div class="filter-item__name">Вид тура</div>
+                                    <input class="filter-item__field" placeholder="Любой" readonly/>                                    
+                                </div>
+                            </div>
+                            <div class="filter-item__list filter-list" data-filter-list="2">
+                                <div class="filter-list__inner">
+                                    <label class="filter-list__search"><input type="text" class="filter-itme__search-field" placeholder="Поиск"></label> 
+                                    <div class="filter-list__inner-list list-scrollbar ">
+                                        <div class="filter-list__row">
+                                            <div class="filter-list__name">Популярные</div>
+                                            <ul class="filter-list__items">
+                                                <li class="filter-list__item ">Авторские</li>
+                                                <li class="filter-list__item">Архангельская область</li>
+                                                <li class="filter-list__item">Восхождения на горы России</li>
+                                                <li class="filter-list__item">Джип-туры</li>
+                                                <li class="filter-list__item">Комбинированные</li>
+                                                <li class="filter-list__item">Экспедиции</li>
+                                                <li class="filter-list__item">Сплавы на байдарках</li>
+                                            </ul> 
+                                        </div>                                                            
+                                        <div class="filter-list__row">
+                                            <div class="filter-list__name">Виды отдыха</div>
+                                            <ul class="filter-list__items">
+                                                <li class="filter-list__item">Авторские</li>
+                                                <li class="filter-list__item">Амурская область</li>
+                                                <li class="filter-list__item">Арктика</li>
+                                                <li class="filter-list__item">Восхождения на горы России</li>
+                                                <li class="filter-list__item">Джип-туры</li>
+                                                <li class="filter-list__item">Комбинированные</li>
+                                                <li class="filter-list__item">Восхождения на горы России</li>
+                                                <li class="filter-list__item">Джип-туры</li>
+                                                <li class="filter-list__item">Комбинированные</li>
+                                                <li class="filter-list__item">Экспедиции</li>
+                                                <li class="filter-list__item">Сплавы на байдарках</li>
+                                            </ul> 
+                                        </div>  
+                                        <div class="filter-list__row">
+                                            <div class="filter-list__name">Коллекции</div>
+                                            <ul class="filter-list__items">
+                                                <li class="filter-list__item">Байкал</li>
+                                                <li class="filter-list__item">Архангельская область</li>
+                                                <li class="filter-list__item">Сочи</li>
+                                                <li class="filter-list__item">Камчатка</li>
+                                                <li class="filter-list__item">Антарктика</li>
+                                            </ul> 
+                                        </div>                                     
+                                    </div>
+                                </div>
+                                <div class="filter-list__footer">
+                                    <div class="filter-list__item-choice filter-list__item-choice--icon">Архангельская область</div>
+                                    <div class="filter-list__item-choice filter-list__item-choice--icon">Камчатка</div>
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="filter-item">
+                            <div class="filter-item__row"  data-filter-tab="3">
+                                <svg class='filter-item__icon' width='24' height='25'><use href='./img/icons/icons.svg#calendar'></use></svg>
+                                <div class="filter-item__content">
+                                    <div class="filter-item__name">Период</div>
+                                    <input class="filter-item-calender" data-input placeholder="Любой"></input> 
+                                    <div class="box">
+                                        <!-- <input class="filter-item-calender" id="el1" placeholder="Любой"></input>
+                                        <input class="filter-item-calender" id="el2" placeholder=""></input> -->
+                                    </div>                                 
+                                </div>
+                            </div>                           
+                        </div> 
+                        <div class="filter-item">
+                            <div class="filter-item__row">
+                                <svg class='filter-item__icon' width='24' height='24'><use href='./img/icons/icons.svg#calendar'></use></svg>
+                                <div class="filter-item__content">
+                                    <div class="filter-item__name">Период</div>
+                                    <div class="filter-item__field">Любой</div>
+                                </div>
+                            </div>                            
+                        </div> 
+                        <button class="filter-item filter__button">
+                            <div class="filter-item__row">
+                                <svg class='filter-item__icon' width='24' height='24'><use href='./img/icons/icons.svg#glass'></use></svg>
+                                <div class="filter-item__content">
+                                    <div class="filter-item__name">Найти тур своей мечты</div>                                   
+                                </div>
+                            </div>                           
+                        </button> 
                     </div>
                 </div>
                 <div data-content="2" class="tabs__content">
-                    найти
+                    <div class="filter__container filter__container--search">
+                        <label class="filter__holder-input"><input type="text" class="filter__search-field" placeholder="Поиск по названию"></label>
+                        <button class="filter-item filter__button">
+                            <div class="filter-item__row">
+                                <svg class='filter-item__icon' width='24' height='24'><use href='./img/icons/icons.svg#glass'></use></svg>
+                                <div class="filter-item__content">
+                                    <div class="filter-item__name">Найти тур своей мечты</div>                                   
+                                </div>
+                            </div>                           
+                        </button>
+                    </div>
                 </div>
             </div>
+            <br>
+            <!-- <div class="box"> -->
+                <input class="filter-item-calender" id="el1" placeholder="Любой"></input>
+                <input class="filter-item-calender" id="el2" placeholder=""></input>
+            <!-- </div>  -->
         </div>
     </div>
-    <svg class='' width='21' height='28'><use href='./img/icons/icons.svg#traveler'></use></svg>
+    
     
     
 
     
+    <script src="./libs/air-datepicker.js"></script>
     <script src="./main.js"></script>
   
 </body>

@@ -1,7 +1,6 @@
 :root {
   --color-b: #028fde;
   --color-text: #3D3D3D;
-  --color-active: #FF9900;
 }
 
 .body-filter *,
@@ -75,7 +74,7 @@
 }
 .body-filter .filter-item {
   position: relative;
-  padding: 12px 20px 11px 9px;
+  padding: 12px 20px 11px 11px;
 }
 .body-filter .filter-item::before {
   position: absolute;
@@ -105,8 +104,7 @@
   overflow: hidden;
 }
 .body-filter .filter-item__icon {
-  margin-right: 10px;
-  flex-shrink: 0;
+  margin-right: 15px;
 }
 .body-filter .filter-item__content {
   width: 100%;
@@ -119,28 +117,9 @@
 }
 .body-filter .filter-item__field {
   display: block;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: var(--color-text);
   width: 100%;
   position: relative;
   white-space: nowrap;
-  cursor: pointer;
-  border: none;
-}
-.body-filter .filter-item__field::-webkit-input-placeholder {
-  color: var(--color-text);
-}
-.body-filter .filter-item__field:-ms-input-placeholder {
-  color: var(--color-text);
-}
-.body-filter .filter-item__field::-ms-input-placeholder {
-  color: var(--color-text);
-}
-.body-filter .filter-item__field::placeholder {
-  color: var(--color-text);
 }
 .body-filter .filter-item__field::before {
   position: absolute;
@@ -183,27 +162,23 @@
   padding: 17px 13px;
   font-weight: 800;
   color: #FFFFFF;
-  border: none;
 }
 .body-filter .filter__button .filter-item__name {
   opacity: 1;
 }
 .body-filter .filter-list {
-  display: none;
   position: absolute;
   width: 614px;
+  height: 450px;
   background: #FFFFFF;
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.08);
   border-radius: 6px;
-  top: 65px;
-  left: 0px;
+  top: 70px;
+  left: -10px;
   z-index: 1;
 }
-.body-filter .filter-list.filter-list--active {
-  display: block;
-}
 .body-filter .filter-list__inner {
-  padding: 14px 11px 0px 3px;
+  padding: 14px 10px 20px 20px;
 }
 .body-filter .filter-list__search {
   position: relative;
@@ -220,7 +195,7 @@
   width: 20px;
   height: 20px;
   top: 50%;
-  right: 10px;
+  right: 20px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -229,102 +204,15 @@
   background: #FFFFFF;
   border: 1px solid #028FDE;
   border-radius: 6px;
-  padding: 7px 10px;
-  font-style: normal;
+  padding: 10px 10px;
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
   color: #3D3D3D;
 }
-.body-filter .filter-itme__search-field::-webkit-input-placeholder {
-  opacity: 0.5;
-}
-.body-filter .filter-itme__search-field:-ms-input-placeholder {
-  opacity: 0.5;
-}
-.body-filter .filter-itme__search-field::-ms-input-placeholder {
-  opacity: 0.5;
-}
-.body-filter .filter-itme__search-field::placeholder {
-  opacity: 0.5;
-}
 .body-filter .filter-list__inner-list {
-  height: 316px;
+  height: 350px;
   overflow-y: auto;
-  margin-bottom: 20px;
-}
-.body-filter .filter-list__row {
-  font-size: 16px;
-  line-height: 19px;
-  color: #3D3D3D;
-  margin-bottom: 18px;
-}
-.body-filter .filter-list__name {
-  font-weight: 700;
-  margin-bottom: 7px;
-  padding-left: 14px;
-}
-.body-filter .filter-list__items {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.body-filter .filter-list__item {
-  font-weight: 400;
-  position: relative;
-  cursor: pointer;
-  transition: 0.3s ease-in;
-  padding: 4px 14px 4px 14px;
-  border-radius: 15px;
-  transition: 0.3s ease-in;
-}
-.body-filter .filter-list__item:hover {
-  background: #ECECEC;
-}
-.body-filter .filter-list__item.filter-list__item--ative {
-  background: #ECECEC;
-}
-.body-filter .filter-list__item.filter-list__item--ative::before {
-  position: absolute;
-  content: '';
-  background-image: url("./../img/icon_check_blue.svg");
-  background-repeat: no-repeat;
-  background-size: auto;
-  width: 18px;
-  height: 18px;
-  top: 50%;
-  right: 10px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  transition: 0.3s ease-in;
-}
-.body-filter .filter-list__footer {
-  display: -webkit-box;
-  display: flex;
-  flex-wrap: wrap;
-  border-top: 1px solid rgba(61, 61, 61, 0.2);
-  min-height: 52px;
-  padding: 14px 20px 20px;
-}
-.body-filter .filter-list__item-choice {
-  position: relative;
-  margin-right: 20px;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  padding-right: 25px;
-}
-.body-filter .filter-list__item-choice--icon::before {
-  position: absolute;
-  content: '';
-  background-image: url("./../img/close_blue.svg");
-  background-repeat: no-repeat;
-  background-size: auto;
-  width: 13px;
-  height: 13px;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
 }
 .body-filter .filter__container--search {
   grid-template-columns: 1fr minmax(auto, 245px);
@@ -367,86 +255,6 @@
   font-size: 16px;
   line-height: 19px;
   color: #9C9C9E;
-}
-.body-filter .list-scrollbar {
-  overflow-y: auto;
-  scrollbar-color: var(--color-b) rgba(61, 61, 61, 0.2);
-  scrollbar-width: thin;
-}
-.body-filter .list-scrollbar::-webkit-scrollbar {
-  width: 8px;
-  height: 5px;
-  background-color: rgba(61, 61, 61, 0.2);
-}
-.body-filter .list-scrollbar::-webkit-scrollbar-track {
-  background-color: rgba(61, 61, 61, 0.2);
-  border-radius: 4px;
-}
-.body-filter .list-scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background: var(--color-b);
-}
-
-.box {
-  display: -webkit-box;
-  display: flex;
-}
-
-.filter-item-calender {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: var(--color-active);
-}
-.filter-item-calender::-webkit-input-placeholder {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: var(--color-text);
-}
-.filter-item-calender:-ms-input-placeholder {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: var(--color-text);
-}
-.filter-item-calender::-ms-input-placeholder {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: var(--color-text);
-}
-.filter-item-calender::placeholder {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: var(--color-text);
-}
-
-.air-datepicker.-inline- {
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 6px;
-  border: none;
-}
-
-.air-datepicker-nav--title {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  color: #000000;
-}
-.air-datepicker-nav--title i {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
-  color: #000000;
 }
 
 /*# sourceMappingURL=style.css.map */
